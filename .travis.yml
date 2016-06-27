@@ -17,6 +17,6 @@ env:
     - PATH=$PATH:$RISCV/bin
     - LD_LIBRARY_PATH=$RISCV/lib
 before_script:
-- (cd /home/travis/build; if [ -d riscv ] ; then echo riscv cached; else wget https://github.com/jameyhicks/riscv-test/releases/download/v16.06.27/riscv-tools.tar.bz2 && tar -jxvf riscv-tools.tar.bz2 && rm -f riscv-tools.tar.bz2; fi)
+- (cd /home/travis/build; if [ -d riscv ] ; then echo riscv cached; else wget https://github.com/jameyhicks/riscv-test/releases/download/v16.06.27/riscv-tools.tar.bz2 && tar -jxf riscv-tools.tar.bz2 && rm -f riscv-tools.tar.bz2; fi)
 script:
 - ./configure --prefix=/home/travis/build/riscv-tests > /dev/null && make -j4 > /dev/null && make install > /dev/null
